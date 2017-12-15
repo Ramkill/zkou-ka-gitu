@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="cs-cz">
+<head>
+    <meta charset="utf-8" />
+    <title>Kvadratická rovnice</title>
+</head>
+
+<body>
+<form action="qrovnice.php" method="post">
+    <h1>Kvadratická rovnice</h1>
+	<script type="text/javascript">
+		var a = prompt("Zadejte postupně koeficienty kvadratické rovnice ax^2 + bx + c = 0, teď koeficient a:");
+		var b = prompt("Zadejte postupně koeficienty kvadratické rovnice ax^2 + bx + c = 0, teď koeficient b:");
+		var c = prompt("Zadejte postupně koeficienty kvadratické rovnice ax^2 + bx + c = 0, teď koeficient c:");
+		
+		if (a != 0)
+		{
+			// výpočet diskriminantu
+			var d = b * b - 4 * a * c;
+			if (d < 0)
+				document.write("Neexistuje řešení v oblasti reálných čísel");
+				// pro zjednodušení se komplexními kořeny nebudeme zabývat
+			else if (d == 0)
+			{
+				var x = -b / (2 * a);
+				document.write("Rovnice má jeden kořen x = " + x);
+			}
+			else
+			{
+				var x1 = (-b + Math.sqrt(d)) / (2 * a);
+				var x2 = (-b - Math.sqrt(d)) / (2 * a);
+				document.write("Rovnice má 2 reálné kořeny<br />x1 = " + x1 + "<br />x2 = " + x2);
+			}
+		}
+		else
+			document.write("Zadaná rovnice není kvadratická.");
+	</script>
+    
+</form>
+</body>
+
+</html>
